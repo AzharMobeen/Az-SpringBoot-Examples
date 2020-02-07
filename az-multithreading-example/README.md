@@ -3,8 +3,8 @@ In this project I'm using Spring Boot with JPA and H2 in-memory DB to explain As
 
 
 #### Step by step guide:
-* In Java8 *CompletableFuture* introduced for none-blocking/Asychronous calls.
-* @EnableAsync annotation is used for enable Asynchronous/Multithreading in Spring boot (To run methods in background).
+* In Java8 `CompletableFuture` introduced for none-blocking/Asychronous calls.
+* `@EnableAsync` annotation is used for enable Asynchronous/Multithreading in Spring boot (To run methods in background).
 * Now we need to setup ThreadPoolTaskExecutor related stuff.
 	
 		@Bean
@@ -17,7 +17,7 @@ In this project I'm using Spring Boot with JPA and H2 in-memory DB to explain As
 			threadPoolTaskExecutor.initialize();
 			return threadPoolTaskExecutor;
 		}
-* If we don't configure above *ThreadPoolTaskExecutor* Spring boot create *SimpleThreadPoolTaskExecutor*. Better to create your custom Executor.
+* If we don't configure above `ThreadPoolTaskExecutor` Spring boot create `SimpleThreadPoolTaskExecutor`. Better to create your custom Executor.
 * In Service class some methods I have added @Async that makes those methods to run Asynchronously/background.
 * Install postman to your machine and for post requests (chose field and type as file and select CSV file at least two.
 * How to pass CSV files as input to RESTful service please check [youtube video tutorial](https://youtu.be/3rJBLFA95Io?t=1203) 
