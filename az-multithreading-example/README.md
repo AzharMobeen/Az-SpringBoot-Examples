@@ -5,8 +5,8 @@ In this project I'm using Spring Boot with JPA and H2 in-memory DB to explain As
 #### Step by step guide:
 * In Java8 *CompletableFuture* introduced for none-blocking/Asychronous calls.
 * @EnableAsync annotation is used for enable Asynchronous/Multithreading in Spring boot (To run methods in background).
-* Now we need to setup ThreadPoolTaskExecutor related stuff.
-	
+* Now we need to setup ThreadPoolTaskExecutor related stuff.	
+
 	@Bean
 	public Executor taskExecutor() {		
 		ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();		
