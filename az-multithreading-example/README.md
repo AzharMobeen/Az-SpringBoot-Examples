@@ -21,11 +21,12 @@ In this project I'm using Spring Boot with JPA and H2 in-memory DB to explain As
 * In Service class some methods I have added `@Async` that makes those methods to run Asynchronously/background.
 * Install postman to your machine and for post requests (chose field and type as file and select CSV file at least two.
 * How to pass CSV files as input to RESTful service please check [youtube video tutorial](https://youtu.be/3rJBLFA95Io?t=1203) 
-* For generating file please check reference material.  
+* For generating file please check reference material.
+
 #### EndPoints:
-* POST request for input multiple files from post man [localhost:8081/users](localhost:8081/users)
-* GET request for normal output [localhost:8081/users](localhost:8081/users)
-* GET request for Asynchronous call output [localhost:8081/usersAsync](localhost:8081/usersAsync)
+* POST request for input multiple files from post man [http://localhost:8081/users](http://localhost:8081/users)
+* GET request for normal output [http://localhost:8081/users](http://localhost:8081/users)
+* GET request for Asynchronous call output [http://localhost:8081/usersAsync](http://localhost:8081/usersAsync)
 
 #### Reference Material:
 * [Spring Official](https://spring.io/guides/gs/async-method/)
