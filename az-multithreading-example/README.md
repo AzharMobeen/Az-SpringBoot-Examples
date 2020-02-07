@@ -18,7 +18,7 @@ In this project I'm using Spring Boot with JPA and H2 in-memory DB to explain As
 			return threadPoolTaskExecutor;
 		}
 * If we don't configure above `ThreadPoolTaskExecutor` Spring boot create `SimpleThreadPoolTaskExecutor`. Better to create your custom Executor.
-* In Service class some methods I have added @Async that makes those methods to run Asynchronously/background.
+* In Service class some methods I have added `@Async` that makes those methods to run Asynchronously/background.
 * Install postman to your machine and for post requests (chose field and type as file and select CSV file at least two.
 * How to pass CSV files as input to RESTful service please check [youtube video tutorial](https://youtu.be/3rJBLFA95Io?t=1203) 
 * For generating file please check reference material.  
