@@ -32,7 +32,7 @@ In this project I'm using Spring Boot with JPA and H2 in-memory DB to explain As
 #### Extra Things:
 * I have used Builder Pattern by [Project Lombok](https://projectlombok.org/features/Builder)
 	
-	User user = 	User.builder()
+		User user = 	User.builder()
     				.name(data[0])
     				.email(data[1])
     				.gender(data[2])
