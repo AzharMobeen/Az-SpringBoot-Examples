@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.az.multithreading.entities.User;
+import com.az.multithreading.entities.User.UserBuilder;
 import com.az.multithreading.repositories.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -58,10 +59,11 @@ public class UserService {
     		String line;
     		while((line=bufferedReader.readLine())!=null) {
     			final String[] data = line.split(",");
-    			final User user = new User();
-    			user.setName(data[0]);
-    			user.setEmail(data[1]);
-    			user.setGender(data[2]);
+    			final User user = User.builder()
+    								.name(data[0])
+    								.email(data[1])
+    								.gender(data[2])
+    								.build();    			
     			userList.add(user);    			
     		}
     		

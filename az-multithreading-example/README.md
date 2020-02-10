@@ -3,9 +3,10 @@ In this project I'm using Spring Boot with JPA and H2 in-memory DB to explain As
 
 
 #### Step by step guide:
-* In Java8 *CompletableFuture* introduced for none-blocking/Asychronous calls.
-* @EnableAsync annotation is used for enable Asynchronous/Multithreading in Spring boot (To run methods in background).
+* In Java8 `CompletableFuture` introduced for none-blocking/Asychronous calls.
+* `@EnableAsync` annotation is used for enable Asynchronous/Multithreading in Spring boot (To run methods in background).
 * Now we need to setup ThreadPoolTaskExecutor related stuff.
+	
 	
 	@Bean
 	public Executor taskExecutor() {		
@@ -17,15 +18,25 @@ In this project I'm using Spring Boot with JPA and H2 in-memory DB to explain As
 		threadPoolTaskExecutor.initialize();
 		return threadPoolTaskExecutor;
 	}
-* If we don't configure above *ThreadPoolTaskExecutor* Spring boot create *SimpleThreadPoolTaskExecutor*. Better to create your custom Executor.
+* If we don't configure above `ThreadPoolTaskExecutor` Spring boot create `SimpleThreadPoolTaskExecutor`. Better to create your custom Executor.
 * In Service class some methods I have added @Async that makes those methods to run Asynchronously/background.
 * Install postman to your machine and for post requests (chose field and type as file and select CSV file at least two.
 * How to pass CSV files as input to RESTful service please check [youtube video tutorial](https://youtu.be/3rJBLFA95Io?t=1203) 
-* For generating file please check reference material.  
+* For generating file please check reference material.
+
 #### EndPoints:
-* POST request for input multiple files from post man [localhost:8081/users](localhost:8081/users)
-* GET request for normal output [localhost:8081/users](localhost:8081/users)
-* GET request for Asynchronous call output [localhost:8081/usersAsync](localhost:8081/usersAsync)
+* POST request for input multiple files from post man [http://localhost:8081/users](http://localhost:8081/users)
+* GET request for normal output [http://localhost:8081/users](http://localhost:8081/users)
+* GET request for Asynchronous call output [http://localhost:8081/usersAsync](http://localhost:8081/usersAsync)
+
+#### Extra Things:
+* I have used Builder Pattern by [Project Lombok](https://projectlombok.org/features/Builder)
+	
+	User user = 	User.builder()
+    				.name(data[0])
+    				.email(data[1])
+    				.gender(data[2])
+    				.build();    	
 
 #### Reference Material:
 * [Spring Official](https://spring.io/guides/gs/async-method/)
